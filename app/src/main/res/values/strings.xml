@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">RecyclerView_V_1</string>
+    <string name="mainTitle">Мой Гардероб</string>
+    <string name="mainButtonText">К ГАРДЕРОБУ</string>
+</resources>
