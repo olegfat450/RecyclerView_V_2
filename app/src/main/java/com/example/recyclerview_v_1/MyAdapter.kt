@@ -9,10 +9,15 @@ import androidx.recyclerview.widget.RecyclerView
 
 class MyAdapter(private val dress: List<Dress>): RecyclerView.Adapter<MyAdapter.UserViewHolder>() {
 
+    private var onDressClickListener: OnDressClickListener? = null
+
+    interface OnDressClickListener{
+        fun onDressClick( dress: Dress, position: Int ) }
+
+
      class UserViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
 
          val name: TextView = itemView.findViewById(R.id.name_item)
-         val description: TextView = itemView.findViewById(R.id.description_item)
          val image: ImageView = itemView.findViewById(R.id.image_item)
 
 
@@ -31,10 +36,16 @@ class MyAdapter(private val dress: List<Dress>): RecyclerView.Adapter<MyAdapter.
 
     override fun onBindViewHolder(holder: UserViewHolder, position: Int) {
 
-         holder.description.text = dress[position].description
          holder.name.text = dress[position].name
          holder.image.setImageResource(dress[position].image)
-    }
+         holder.itemView.setOnClickListener {
+              if ( onDressClickListener != null ) onDressClickListener!!.onDressClick(dress[position],position)
+         }
+     }
+
+             fun setOnDressClickListener(onDressClickListener: OnDressClickListener){
+                 this.onDressClickListener = onDressClickListener
+             }
 
 }
 

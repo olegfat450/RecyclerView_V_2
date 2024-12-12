@@ -1,6 +1,8 @@
 package com.example.recyclerview_v_1
 
-class Dress(val name: String,val description: String,val image: Int) {
+import java.io.Serializable
+
+class Dress(val name: String,val description: String,val image: Int): Serializable {
 
     companion object{
 
@@ -26,7 +28,7 @@ class Dress(val name: String,val description: String,val image: Int) {
         val d20 = Dress("Рубашка","Рубашка синяя",R.drawable.g20)
 
 
-          val dress: List<Dress> = listOf(d1,d2,d3,d4,d5,d6,d7,d8,d9,d10,d11,d12,d13,d14,d15,d16,d17,d18,d19,d20)
+          val dress: MutableList<Dress> = mutableListOf(d1,d2,d3,d4,d5,d6,d7,d8,d9,d10,d11,d12,d13,d14,d15,d16,d17,d18,d19,d20)
 
 
 
