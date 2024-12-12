@@ -33,7 +33,7 @@ class Activity2 : AppCompatActivity() {
 
            setSupportActionBar(toolbar)
          title = "Мой гардероб"
-         toolbar.setBackgroundColor(Color.GRAY)
+         toolbar.setBackgroundColor(Color.GRAY )
          toolbar.titleMarginStart = 160
 
           val dress = Dress.dress
